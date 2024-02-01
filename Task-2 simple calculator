@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int opera;
+    double a,b,sum,sub,mul,div;
+    cout<<"enter number 1:"<<endl;
+    cin>>a;
+    cout<<"enter number 2:"<<endl;
+    cin>>b;
+    cout<<"enter operator (1.sum,2.sub.3.mul.,4.div):";
+    cin>>opera;
+    switch (opera)
+    {
+    case 1:
+        sum=a+b;
+        cout<<"sum is:"<<sum<<endl;
+        break;
+    case 2:
+    sub=a-b;
+    cout<<"sub is:"<<sub<<endl;
+    break;
+    case 3:
+    mul=a*b;
+    cout<<"mul is:"<<mul<<endl;
+    break;
+    case 4:
+    div=a/b;
+    cout<<"div is:"<<div<<endl;
+    break;
+    default:
+    break;
+    }
+cout<<"thank you";
+
+return 0;
+}
