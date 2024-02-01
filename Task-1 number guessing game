@@ -1,37 +1,31 @@
 #include <iostream>
-using namespace std;
-int main()
-{
-    int opera;
-    double a,b,sum,sub,mul,div;
-    cout<<"enter number 1:"<<endl;
-    cin>>a;
-    cout<<"enter number 2:"<<endl;
-    cin>>b;
-    cout<<"enter operator (1.sum,2.sub.3.mul.,4.div):";
-    cin>>opera;
-    switch (opera)
-    {
-    case 1:
-        sum=a+b;
-        cout<<"sum is:"<<sum<<endl;
-        break;
-    case 2:
-    sub=a-b;
-    cout<<"sub is:"<<sub<<endl;
-    break;
-    case 3:
-    mul=a*b;
-    cout<<"mul is:"<<mul<<endl;
-    break;
-    case 4:
-    div=a/b;
-    cout<<"div is:"<<div<<endl;
-    break;
-    default:
-    break;
-    }
-cout<<"thank you";
+#include <cstdlib>
+#include <ctime>
 
-return 0;
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int secretNumber = rand() % 100 + 1;
+    int guess;
+    int attempts = 0;
+
+    cout << "Welcome to the Number Guessing Game!\n";
+    cout << "I have selected a number between 1 and 100. Try to guess it.\n";
+
+    do {
+        cout << "Enter your guess: ";
+        cin >> guess;
+        attempts++;
+
+        if (guess < secretNumber) {
+            cout << "Too low! Try again.\n";
+        } else if (guess > secretNumber) {
+            cout << "Too high! Try again.\n";
+        } else {
+            cout << "Congratulations! You guessed it right in " << attempts << " attempts.\n";
+        }
+    } while (guess != secretNumber);
+
+    return 0;
 }
